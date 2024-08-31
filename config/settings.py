@@ -63,7 +63,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,16 +76,16 @@ TEMPLATES = [
     },
 ]
 
-# DATABASES = {
-#     "default": {        
-#         "ENGINE": "django.db.backends.postgresql",
-#         "NAME": "ibbymnnm",
-#         "USER": "ibbymnnm",
-#         "PASSWORD": "81Qciqv71RB_VYMUpqi7qvULCj58GqPi",
-#         "HOST": "kashin.db.elephantsql.com",
-#         "PORT": "5432",
-#     }
-# }
+DATABASES = {
+    "default": {        
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "ibbymnnm",
+        "USER": "ibbymnnm",
+        "PASSWORD": "81Qciqv71RB_VYMUpqi7qvULCj58GqPi",
+        "HOST": "kashin.db.elephantsql.com",
+        "PORT": "5432",
+    }
+}
 
 accepted_renderer = True
 REST_FRAMEWORK = {
@@ -117,12 +117,12 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
