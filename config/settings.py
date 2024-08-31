@@ -25,9 +25,15 @@ SECRET_KEY = 'django-insecure-xzoao$%j5nhl(fexxx#cc1kam=)j!h9%szj*$915)1(tfoot!6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://yetumusic-production.up.railway.app/",
+    "https://yetumusic-production.up.railway.app",
+    "http://0.0.0.0:8000/",
+    "http://0.0.0.0:8000",
 
+]
 # Application definition
 
 INSTALLED_APPS = [
@@ -108,12 +114,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 
 
 # Password validation
