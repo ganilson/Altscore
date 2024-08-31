@@ -74,16 +74,16 @@ TEMPLATES = [
     },
 ]
 
-DATABASES = {
-    "default": {        
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "ibbymnnm",
-        "USER": "ibbymnnm",
-        "PASSWORD": "81Qciqv71RB_VYMUpqi7qvULCj58GqPi",
-        "HOST": "kashin.db.elephantsql.com",
-        "PORT": "5432",
-    }
-}
+# DATABASES = {
+#     "default": {        
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": "ibbymnnm",
+#         "USER": "ibbymnnm",
+#         "PASSWORD": "81Qciqv71RB_VYMUpqi7qvULCj58GqPi",
+#         "HOST": "kashin.db.elephantsql.com",
+#         "PORT": "5432",
+#     }
+# }
 
 accepted_renderer = True
 REST_FRAMEWORK = {
@@ -114,12 +114,12 @@ WSGI_APPLICATION = "config.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 
 
 # Password validation
