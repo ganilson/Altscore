@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.views import APIView
+
 from rest_framework.decorators import api_view
 
 # Create your views here.
@@ -22,14 +24,9 @@ def index(request):
         return Response({"message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
     
 
-@api_view(['GET'])
-def phase_phase_change_diagram(request):
-    try:
-        pressure = float(request.GET.get("pressure", 1))
-        print(pressure)
-        print(calculate_specific_volume(pressure))
-        
-        return Response({ "specific_volume_liquid": 0.0035, "specific_volume_vapor": 0.0035 }, status=status.HTTP_200_OK)
-    except Exception as e:
-        return Response({"message": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    
+class PhaseChangeDiagramView(APIView):
+    def get(self, request):
+        pressure = int(request.GET.get("pressure", 1))
+
+        data = {"specific_volume_liquid": 0.0035, "specific_volume_vapor": 0.0035}
+        return Response(data, status=status.HTTP_200_OK)

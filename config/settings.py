@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "app"
+    "app",
+        'rest_framework',
+
 ]
 
 MIDDLEWARE = [
@@ -87,12 +89,10 @@ TEMPLATES = [
 
 accepted_renderer = True
 REST_FRAMEWORK = {
-    "DEFAULT_RENDERER_CLASSES": [
-        "rest_framework.renderers.JSONRenderer",
-        "rest_framework.renderers.TemplateHTMLRenderer",
-        # "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly",
-        "rest_framework.renderers.BrowsableAPIRenderer",
-    ],
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ),
     "DEFAULT_PERMISSION_CLASSES": [
         "rest_framework.permissions.AllowAny",
     ],
