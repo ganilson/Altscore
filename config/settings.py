@@ -84,7 +84,7 @@ DATABASES = {
         "PASSWORD": "81Qciqv71RB_VYMUpqi7qvULCj58GqPi",
         "HOST": "kashin.db.elephantsql.com",
         "PORT": "5432",
-    }
+    }   
 }
 
 accepted_renderer = True
