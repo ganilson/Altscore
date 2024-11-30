@@ -33,5 +33,5 @@ class InscricaoListCreateView(generics.ListCreateAPIView):
                     context={'inscricao': instance}
                 )
             except Exception as e:
-                print(e)
+                print(f"Erro detalhado ao enviar e-mail: {e}")
                 raise ValidationError({"email": "Falha ao enviar e-mail. Tente novamente mais tarde."})
