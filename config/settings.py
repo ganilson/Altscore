@@ -29,7 +29,9 @@ ALLOWED_HOSTS = ["*"]
 
 CSRF_TRUSTED_ORIGINS = ["*"]
 # Application definition
-
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # porta onde o front-end está rodando
+]
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -50,7 +52,9 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',    
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
