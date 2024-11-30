@@ -29,7 +29,7 @@ class InscricaoListCreateView(generics.ListCreateAPIView):
                 sendEmail(
                     instance.email,
                     'Confirmação de Inscrição',
-                    'email/Welcome.html',
+                    'Welcome.html',
                     context={'inscricao': instance}
                 )
             except Exception as e:
