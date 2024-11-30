@@ -31,7 +31,7 @@ class InscricaoListCreateView(generics.ListCreateAPIView):
                 sendEmail(
                     instance.email,
                     'Confirmação de Inscrição',
-                    'Welcome.html',
+                    'welcome.html',
                     context={'inscricao': instance}
                 )
             except SMTPException as smtp_error:
