@@ -6,7 +6,7 @@ from utils.senders import *
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.exceptions import ValidationError
 from django.db import transaction
-
+import traceback
 class InscricaoListCreateView(generics.ListCreateAPIView):
     queryset = Inscricao.objects.all()
     serializer_class = InscricaoSerializer
@@ -34,4 +34,6 @@ class InscricaoListCreateView(generics.ListCreateAPIView):
                 )
             except Exception as e:
                 print(f"Erro detalhado ao enviar e-mail: {e}")
+                print(traceback.format_exc())
+
                 raise ValidationError({"email": "Falha ao enviar e-mail. Tente novamente mais tarde."})
