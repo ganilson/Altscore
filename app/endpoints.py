@@ -33,5 +33,5 @@ class InscricaoListCreateView(generics.ListCreateAPIView):
                     context={'inscricao': instance}
                 )
             except Exception as e:
-                # Faz o rollback em caso de erro no envio do e-mail
+                print(e)
                 raise ValidationError({"email": "Falha ao enviar e-mail. Tente novamente mais tarde."})
