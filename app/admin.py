@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import sitemDamage,sistemSelector
+from .models import Inscricao
 # Register your models here.
 
-admin.site.register(sitemDamage)
-admin.site.register(sistemSelector)
+admin.site.register(Inscricao)
