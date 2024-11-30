@@ -27,13 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://yetumusic-production.up.railway.app/",
-    "https://yetumusic-production.up.railway.app",
-    "http://0.0.0.0:8000/",
-    "http://0.0.0.0:8000",
-
-]
+CSRF_TRUSTED_ORIGINS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -49,11 +43,7 @@ INSTALLED_APPS = [
 
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
-CORS_ALLOW_CREDENTIALS = True
-CORS_EXPOSE_HEADERS = [
-    'X-Custom-Header',
-]
+ 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
